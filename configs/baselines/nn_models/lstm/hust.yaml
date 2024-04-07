@@ -1,24 +1,24 @@
-model:
-    name: 'LSTMRULPredictor'
-    in_channels: 1
-    channels: 32
-    input_height: 100
-    input_width: 1000
-    epochs: 1000
-    batch_size: 128
-    evaluate_freq: 100
-train_test_split:
-    name: 'HUSTTrainTestSplitter'
-    cell_data_path: 'data/processed/HUST'
 feature:
-    name: 'VoltageCapacityMatrixFeatureExtractor'
-    diff_base: 9
-    max_cycle_index: 99
-    use_precalculated_qdlin: True
+  diff_base: 9
+  max_cycle_index: 99
+  name: VoltageCapacityMatrixFeatureExtractor
+  use_precalculated_qdlin: true
 label:
-    name: 'RULLabelAnnotator'
+  name: RULLabelAnnotator
 label_transformation:
-    name: 'SequentialDataTransformation'
-    transformations:
-        - name: 'LogScaleDataTransformation'
-        - name: 'ZScoreDataTransformation'
+  name: SequentialDataTransformation
+  transformations:
+  - name: LogScaleDataTransformation
+  - name: ZScoreDataTransformation
+model:
+  batch_size: 64
+  channels: 16
+  epochs: 700
+  evaluate_freq: 100
+  in_channels: 1
+  input_height: 100
+  input_width: 1000
+  name: LSTMRULPredictor
+train_test_split:
+  cell_data_path: data/processed/HUST/final_5_12
+  name: HUSTTrainTestSplitter
