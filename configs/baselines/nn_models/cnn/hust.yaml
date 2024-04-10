@@ -8,13 +8,13 @@ label:
 label_transformation:
   name: SequentialDataTransformation
   transformations:
-  - name: LogScaleDataTransformation
-  - name: ZScoreDataTransformation
+    - name: LogScaleDataTransformation
+    - name: ZScoreDataTransformation
 model:
   batch_size: 64
   channels: 56
   epochs: 200
-  evaluate_freq: 100
+  evaluate_freq: 50
   in_channels: 1
   input_height: 100
   input_width: 1000

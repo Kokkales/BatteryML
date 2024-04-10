@@ -12,9 +12,9 @@ label_transformation:
   - name: LogScaleDataTransformation
   - name: ZScoreDataTransformation
 model:
-  batch_size: 96
+  batch_size: 64
   channels: 64
-  epochs: 1000
+  epochs: 600
   evaluate_freq: 100
   in_channels: 1
   input_height: 1

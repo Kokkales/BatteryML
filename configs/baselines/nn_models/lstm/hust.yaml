@@ -11,13 +11,13 @@ label_transformation:
   - name: LogScaleDataTransformation
   - name: ZScoreDataTransformation
 model:
-  batch_size: 64
-  channels: 16
+  batch_size: 256
+  channels: 8
   epochs: 700
   evaluate_freq: 100
   in_channels: 1
-  input_height: 100
-  input_width: 1000
+  input_height: 500
+  input_width: 600
   name: LSTMRULPredictor
 train_test_split:
   cell_data_path: data/processed/HUST/final_5_12

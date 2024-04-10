@@ -1,0 +1,24 @@
+model:
+  name: LightgbmRULPredictor
+  boosting_type: gbdt
+  learning_rate: 0.001
+  n_estimators: 200
+  objective: regression
+train_test_split:
+  name: HUSTTrainTestSplitter
+  cell_data_path: data/processed/HUST/final_5_12
+feature:
+  name: VoltageCapacityMatrixFeatureExtractor
+  diff_base: 8
+  max_cycle_index: 98
+  cycles_to_keep: 98
+  use_precalculated_qdlin: True
+label:
+  name: RULLabelAnnotator
+feature_transformation:
+  name: ZScoreDataTransformation
+label_transformation:
+  name: SequentialDataTransformation
+  transformations:
+    - name: LogScaleDataTransformation
+    - name: ZScoreDataTransformation

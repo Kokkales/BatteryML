@@ -21,16 +21,16 @@ class HUSTPreprocessor(BasePreprocessor):
     def process(self, parentdir) -> List[BatteryData]:
         raw_file = Path(parentdir) / 'hust_data.zip'
 
-        # with zipfile.ZipFile(raw_file, 'r') as zip_ref:
-        #     pbar = zip_ref.namelist()
-        #     if not self.silent:
-        #         pbar = tqdm(pbar)
-        #     for file in pbar:
-        #         if not self.silent:
-        #             pbar.set_description(f'Unzip HUST file {file}')
-        #         zip_ref.extract(file, raw_file.parent)
+        with zipfile.ZipFile(raw_file, 'r') as zip_ref:
+            pbar = zip_ref.namelist()
+            if not self.silent:
+                pbar = tqdm(pbar)
+            for file in pbar:
+                if not self.silent:
+                    pbar.set_description(f'Unzip HUST file {file}')
+                zip_ref.extract(file, raw_file.parent)
 
-        datadir = raw_file.parent / 'our_data_new'
+        datadir = raw_file.parent / 'our_data'
         cell_files = list(datadir.glob('*.pkl'))
         if not self.silent:
             cell_files = tqdm(

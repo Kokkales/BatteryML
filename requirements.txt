@@ -10,3 +10,4 @@ numba
 matplotlib
 h5py
 openpyxl
+lightgbm

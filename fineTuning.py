@@ -21,6 +21,8 @@ def objective(trial, model_type, model):
             "channels": trial.suggest_int("channels", 8, 64, step=8),
             "epochs": trial.suggest_int("epochs", 100, 1000, step=100),
             "batch_size": trial.suggest_int("batch_size", 32, 256, step=32),
+            "input_height": trial.suggest_int("input_height", 500, 10000, step=50),  # Adjust range as needed
+            "input_width": trial.suggest_int("input_width", 500, 10000, step=50),   # Adjust range as needed
             # "evaluate_freq": trial.suggest_int("evaluate_freq", 50, 200, step=50),
             # in_channels: 1
             # channels: 16
@@ -62,8 +64,7 @@ def objective(trial, model_type, model):
 results_dict = {}
 
 # Define a list of model types to iterate over
-nn_models = ['lstm', 'mlp'] # cnn
-# sklearn_models=['linear regression','gpr','pcr','plsr','rf','ridge','dummy']
+nn_models = ['lstm', 'mlp']
 model_types=['sklearn','nn_models']
 
 model_type='nn_models'
