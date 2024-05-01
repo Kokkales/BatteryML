@@ -1,0 +1,4 @@
+
+{'mlp': {'best_params': {'channels': 48, 'epochs': 400, 'batch_size': 96, 'interp_dim': 1800}, 'best_test_loss': 0.15791215002536774},
+'cnn': {'best_params': {'channels': 56, 'epochs': 100, 'batch_size': 224, 'interp_dim': 800}, 'best_test_loss': 0.1717606782913208},
+'lstm': {'best_params': {'channels': 56, 'epochs': 600, 'batch_size': 32, 'interp_dim': 1200}, 'best_test_loss': 0.19201216101646423}}
