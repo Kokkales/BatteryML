@@ -95,9 +95,10 @@ def plot_cycle_attribute(cycle_infos,
     plt.title(title)
 
 
-
 def plot_result(ground_truth_y, y_pred):
-    # normalized_y = (y - y.min()) / (y.max() - y.min()) 
+    ground_truth_y = ground_truth_y.cpu().numpy()
+    y_pred = y_pred.cpu().numpy()
+    # normalized_y = (y - y.min()) / (y.max() - y.min())
     norm = plt.Normalize(ground_truth_y.min(), ground_truth_y.max())
 
     cmap = plt.get_cmap('viridis')
@@ -108,7 +109,7 @@ def plot_result(ground_truth_y, y_pred):
     cbar.set_label('Cycle life')
 
     # Generate data points for the 45-degree line
-    x_line = np.linspace(ground_truth_y.min(), ground_truth_y.max(), 100)  
+    x_line = np.linspace(ground_truth_y.min(), ground_truth_y.max(), 100)
     y_line = x_line
 
 
@@ -120,4 +121,3 @@ def plot_result(ground_truth_y, y_pred):
     plt.legend()
 
     plt.show()
-
