@@ -1,1 +1,2 @@
 {'mlp': {'best_params': {'channels': 48, 'epochs': 400, 'batch_size': 224, 'interp_dim': 1400}, 'best_test_loss': 394.50091552734375}, 'cnn': {'best_params': {'channels': 24, 'epochs': 100, 'batch_size': 224, 'interp_dim': 1600}, 'best_test_loss': 355.9923400878906}, 'lstm': {'best_params': {'channels': 24, 'epochs': 400, 'batch_size': 256, 'interp_dim': 2000}, 'best_test_loss': 410.95684814453125}}
+'lstm': {'best_params': {'channels': 48, 'epochs': 1100, 'batch_size': 128, 'interp_dim': 1600}, 'best_test_loss': 394.4626159667996}
