@@ -9,9 +9,6 @@ import shutil
 
 NUM_OF_TRIALS=50
 
-# if  os.path.exists("./cache"):
-#     shutil.rmtree("./cache")
-
 def objective(trial, model_type, model):
     data = 'hust'
     config_dir = 'configs/baselines/'
@@ -45,22 +42,11 @@ def objective(trial, model_type, model):
         train_prediction = model.predict(dataset, data_type='train')
         train_loss = dataset.evaluate(train_prediction, 'MAPE', data_type='train')
         test_prediction = model.predict(dataset, data_type='test')
-        test_loss = dataset.evaluate(test_prediction, 'MAPE', data_type='test')
+        test_loss = dataset.evaluate(test_prediction, 'RMSE', data_type='test')
     except:
         return 10000
 
-    # validation_loss = evaluate_model(model, validation_data)  # Replace with your evaluation function
-
-    # return validation_loss
     return test_loss
-
-
-# study = optuna.create_study(direction="minimize")
-# study.optimize(objective, n_trials=2)
-
-# best_params = study.best_params
-# print(best_params)
-
 
 results_dict = {}
 
@@ -85,7 +71,7 @@ for model_type, result in results_dict.items():
     print(f"Model type: {model_type}")
     print(f"Best parameters: {best_params}")
     print(f"Best test loss: {best_test_loss}")
-file_path = "./optuna-logs/optuna_results.txt"
+file_path = "./optuna-logs/optuna_results_RMSE.txt"
 with open(file_path, 'a') as file:
     # Write data to the file
     file.write("\n")

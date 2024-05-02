@@ -33,6 +33,8 @@ def inner_plot_capacity_degradation(cell_data,
     nominal_capacity = cell_data.nominal_capacity_in_Ah
     q_ds = [max(cycle.discharge_capacity_in_Ah) for cycle in cell_data.cycle_data]
 
+    if cell_data.cell_id=='HUST_1-8':
+        return
     if normalize:
         q_ds = [ q_d/nominal_capacity for q_d in q_ds]
     x = np.arange(len(q_ds)) + 1

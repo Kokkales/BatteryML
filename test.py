@@ -3,21 +3,25 @@ import pickle
 
 import scipy.io
 
-data = scipy.io.loadmat('./data/raw/MATR/MATR_batch_20170512.mat')
+# data = scipy.io.loadmat('./data/raw/MATR/MATR_batch_20170512.mat')
 
-print(data.keys())
-# Access data using variable names from the MAT file
+# print(data.keys())
+# # Access data using variable names from the MAT file
 # my_array = data['array_name']
 
 
 
-# with open(f"./data/raw/HUST/hust_data/our_data/1-1.pkl", "rb") as f:  # Open in binary reading mode
+with open(f"./data/raw/HUST/hust_data/our_data/1-3.pkl", "rb") as f:  # Open in binary reading mode
+    data_dict = pickle.load(f)
+
+
+print(data_dict['1-3']['data'][220])
+# # # print(data_dict['1-1']['data'][12]['Cycle number'][1])
+# with open(f"./data/processed/HUST/final_5_12/HUST_1-1.pkl", "rb") as f:  # Open in binary reading mode
 #     data_dict = pickle.load(f)
 
 
-# print(data_dict.keys())
-# # print(data_dict['1-1']['data'][12]['Cycle number'][1])
-
+# print(len(data_dict['cycle_data']))
 
 # with open(f"./data/raw/HUST_FINAL_TEST/omg/our_data_new_5_12/1-1.pkl", "rb") as f:  # Open in binary reading mode
 #     data_dict = pickle.load(f)
