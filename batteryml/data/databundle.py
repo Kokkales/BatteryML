@@ -83,7 +83,7 @@ class DataBundle:
             target = self.train_data.label
         else:
             target = self.test_data.label
-            
+
         # target = self.test_data.label
         if self.label_transformation is not None:
             target = self.label_transformation.inverse_transform(target)
@@ -103,7 +103,7 @@ class DataBundle:
         elif metric == 'MAE':
             score = torch.mean((target - prediction).abs())
         else:
-            score = torch.abs((target - prediction) / target).mean()
+            score = torch.abs((target - prediction) / target).mean()*100
 
         return float(score)
 

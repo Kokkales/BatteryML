@@ -1,0 +1,48 @@
+Model: CNN Default
+RMSE: Train 0.55, test 606.66
+MAPE: Train 0.00, test 0.25
+MAE: Train 0.44, test 464.79
+Model: LSTM Default
+RMSE: Train 0.73, test 424.93
+MAPE: Train 0.00, test 0.20
+MAE: Train 0.35, test 328.53
+Model: MLP Default
+RMSE: Train 197.70, test 442.67
+MAPE: Train 0.07, test 0.19
+MAE: Train 126.24, test 354.02
+Model: MLP Optuna MAPE
+RMSE: Train 142.67, test 394.50
+MAPE: Train 0.06, test 0.16
+MAE: Train 109.44, test 292.01
+Model: LSTM Optuna MAPE
+RMSE: Train 10.29, test 428.16
+MAPE: Train 0.00, test 0.20
+MAE: Train 7.14, test 341.01
+Model: LSTM Optuna MAPE
+RMSE: Train 10.29, test 428.16
+MAPE: Train 0.39, test 19.78
+MAE: Train 7.14, test 341.01
+Model: CNN Optuna MAPE
+RMSE: Train 147.58, test 361.42
+MAPE: Train 5.42, test 17.18
+MAE: Train 104.77, test 307.04
+Model: CNN Optuna RMSE
+RMSE: Train 161.11, test 355.99
+MAPE: Train 6.22, test 17.89
+MAE: Train 117.94, test 322.20
+Model: LSTM Optuna RMSE
+RMSE: Train 13.07, test 467.33
+MAPE: Train 0.39, test 20.77
+MAE: Train 7.62, test 364.73
+Model: MLP Optuna RMSE
+RMSE: Train 142.67, test 394.50
+MAPE: Train 6.12, test 15.79
+MAE: Train 109.44, test 292.01
+Model: LSTM Optuna RMSE
+RMSE: Train 7.99, test 394.46
+MAPE: Train 0.27, test 18.38
+MAE: Train 4.99, test 310.52
+Model: CUSTOM LSTM
+RMSE: Train 176.79, test 408.41
+MAPE: Train 7.17, test 20.03
+MAE: Train 128.79, test 351.63
