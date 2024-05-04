@@ -76,4 +76,4 @@ res = pd.DataFrame(data=result, columns=['Method','extractor', 'train_RMSE', 'te
 os.system('clear')
 print(res.head)
 
-res.to_csv("optuna-logs\sklearn_models.csv")
+res.to_csv("./results/sklearn_models_default.csv")

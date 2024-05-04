@@ -51,7 +51,7 @@ def objective(trial, model_type, model):
 results_dict = {}
 
 # Define a list of model types to iterate over
-nn_models = ['mlp' ,'cnn','lstm']
+nn_models = ['customLstm','mlp' ,'cnn','lstm']
 model_types=['sklearn','nn_models']
 
 model_type='nn_models'
@@ -71,7 +71,7 @@ for model_type, result in results_dict.items():
     print(f"Model type: {model_type}")
     print(f"Best parameters: {best_params}")
     print(f"Best test loss: {best_test_loss}")
-file_path = "./optuna-logs/optuna_results_RMSE.txt"
+file_path = "./results/nn_models_best_rmse.txt"
 with open(file_path, 'a') as file:
     # Write data to the file
     file.write("\n")
