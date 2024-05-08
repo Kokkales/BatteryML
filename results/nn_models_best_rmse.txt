@@ -1,0 +1,11 @@
+
+{'customLstm': {'best_params': {'channels': 48, 'epochs': 1000, 'batch_size': 256, 'interp_dim': 1600}, 'best_test_loss': 408.4131164550781},
+ 'mlp': {'best_params': {'channels': 16, 'epochs': 700, 'batch_size': 256, 'interp_dim': 1800}, 'best_test_loss': 396.5882568359375},
+  'cnn': {'best_params': {'channels': 32, 'epochs': 1000, 'batch_size': 192, 'interp_dim': 1600}, 'best_test_loss': 393.1177978515625},
+   'lstm': {'best_params': {'channels': 48, 'epochs': 1100, 'batch_size': 224, 'interp_dim': 1000}, 'best_test_loss': 394.4626159667969}}
+
+BETTER RESULTS
+{'customLstm': {'best_params': {'channels': 48, 'epochs': 1000, 'batch_size': 256, 'interp_dim': 1600}, 'best_test_loss': 408.4131164550781},
+'mlp': {'best_params': {'channels': 48, 'epochs': 400, 'batch_size': 224, 'interp_dim': 1400}, 'best_test_loss': 394.50091552734375},
+'cnn': {'best_params': {'channels': 24, 'epochs': 100, 'batch_size': 224, 'interp_dim': 1600}, 'best_test_loss': 355.9923400878906},
+'lstm': {'best_params': {'channels': 48, 'epochs': 1100, 'batch_size': 128, 'interp_dim': 1600}, 'best_test_loss': 394.4626159667996}}

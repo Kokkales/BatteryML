@@ -1,0 +1,16 @@
+Model: CNN default
+RMSE: Train 0.55, test 606.66
+MAPE: Train 0.02, test 25.28
+MAE: Train 0.44, test 464.79
+Model: LSTM default
+RMSE: Train 0.73, test 424.93
+MAPE: Train 0.02, test 19.68
+MAE: Train 0.35, test 328.53
+Model: MLP default
+RMSE: Train 197.70, test 442.67
+MAPE: Train 6.85, test 18.88
+MAE: Train 126.24, test 354.02
+Model: LSTM custom default
+RMSE: Train 176.79, test 408.41
+MAPE: Train 7.17, test 20.03
+MAE: Train 128.79, test 351.63
