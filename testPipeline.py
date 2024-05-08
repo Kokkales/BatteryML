@@ -3,7 +3,7 @@ from batteryml.pipeline import Pipeline
 from batteryml.visualization.plot_helper import plot_capacity_degradation, plot_cycle_attribute, plot_result
 
 # pipeline = Pipeline(config_path='configs/baselines/sklearn/ridge/hust.yaml',workspace='workspaces')
-pipeline = Pipeline(config_path='configs/baselines/nn_models/cnn/hust.yaml',
+pipeline = Pipeline(config_path='configs/baselines/nn_models/customLstm/hust.yaml',
                     workspace='workspaces')
 # C:\Users\User\Desktop\BP\BatteryML\your_modified_yaml_file.yaml
 model, dataset = pipeline.train(device='cuda', skip_if_executed=False)
@@ -20,7 +20,7 @@ test_mae = dataset.evaluate(test_prediction, 'MAE', data_type='test')
 # test_loss_two = dataset.evaluate(test_prediction, 'MAPE', data_type='test')
 print(test_prediction)
 print(train_prediction)
-print(f'Model: CNN default')
+print(f'Model: LSTM custom')
 print(f'RMSE: Train {train_loss:.2f}, test {test_loss:.2f}')
 print(f'MAPE: Train {train_mape:.2f}, test {test_mape:.2f}')
 print(f'MAE: Train {train_mae:.2f}, test {test_mae:.2f}')
@@ -30,7 +30,7 @@ plot_result(ground_truth, test_prediction)
 file_path = "./results/all_logs.txt"
 with open(file_path, 'a') as file:
     # Write data to the file
-    file.write('Model: CNN default\n')
+    file.write('Model: LSTM custom\n')
     file.write(f'RMSE: Train {train_loss:.2f}, test {test_loss:.2f}\n')
     file.write(f'MAPE: Train {train_mape:.2f}, test {test_mape:.2f}\n')
     file.write(f'MAE: Train {train_mae:.2f}, test {test_mae:.2f}\n')

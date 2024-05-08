@@ -1,19 +1,19 @@
 model:
-  name: 'MLPRULPredictor'
+  name: 'MyLSTMRULPredictor'
   in_channels: 1
-  channels: 32
-  input_height: 1
+  channels: 48
+  input_height: 100
   input_width: 1000
-  epochs: 5000
-  batch_size: 128
+  epochs: 1000
+  batch_size: 256
   evaluate_freq: 100
 train_test_split:
   name: 'HUSTTrainTestSplitter'
   cell_data_path: 'data/processed/HUST'
 feature:
+  interp_dim: 1600
   name: 'VoltageCapacityMatrixFeatureExtractor'
   diff_base: 9
-  cycles_to_keep: 99
   max_cycle_index: 99
   use_precalculated_qdlin: True
 label:
@@ -23,3 +23,4 @@ label_transformation:
   transformations:
     - name: 'LogScaleDataTransformation'
     - name: 'ZScoreDataTransformation'
+# {'customLstm': {'best_params': {'channels': 48, 'epochs': 1000, 'batch_size': 256, 'interp_dim': 1600}, 'best_test_loss': 408.4131164550781},

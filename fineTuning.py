@@ -10,7 +10,7 @@ import shutil
 NUM_OF_TRIALS=50
 
 def objective(trial, model_type, model):
-    data = 'hust'
+    data = 'hust_best'
     config_dir = 'configs/baselines/'
     config_path = os.path.join(config_dir,model_type, model, f'{data}.yaml')
     with open(config_path, 'r') as stream:
@@ -42,7 +42,7 @@ def objective(trial, model_type, model):
         train_prediction = model.predict(dataset, data_type='train')
         train_loss = dataset.evaluate(train_prediction, 'MAPE', data_type='train')
         test_prediction = model.predict(dataset, data_type='test')
-        test_loss = dataset.evaluate(test_prediction, 'RMSE', data_type='test')
+        test_loss = dataset.evaluate(test_prediction, 'MAPE', data_type='test')
     except:
         return 10000
 
@@ -71,7 +71,7 @@ for model_type, result in results_dict.items():
     print(f"Model type: {model_type}")
     print(f"Best parameters: {best_params}")
     print(f"Best test loss: {best_test_loss}")
-file_path = "./results/nn_models_best_rmse.txt"
+file_path = "./results/nn_models_best_mape.txt"
 with open(file_path, 'a') as file:
     # Write data to the file
     file.write("\n")
